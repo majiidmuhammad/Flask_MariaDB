@@ -8,10 +8,10 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY="secret",
-        DB_USERNAME="root",
-        DB_PASSWORD="",
-        DB_HOST="127.0.0.1",
-        DB_PORT=3306,
+        DB_USERNAME="liana",
+        DB_PASSWORD="Li4na2*22",
+        DB_HOST="172.16.8.1",
+        DB_PORT=3307,
         DB_NAME="Liana",
     )
 
