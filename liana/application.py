@@ -28,7 +28,7 @@ def create():
         AppCode = request.form['AppCode']
         Algorithm = request.form['Algorithm']
         PrivateKey = request.form['PrivateKey']
-        PublicKey = request.form['PublicKey']
+        SignatureKey = request.form['SignatureKey']
         CreatedBy = request.form['CreatedBy']
         error = None
 
@@ -41,9 +41,9 @@ def create():
             db = get_db()
             cur= db.cursor(dictionary=True)
             cur.execute(
-                'INSERT INTO Application (AppCode, PublicKey, PrivateKey, Algorithm, CreatedBy)'
+                'INSERT INTO Application (AppCode, SignatureKey, PrivateKey, Algorithm, CreatedBy)'
                 ' VALUES (%s, %s, %s, %s, %s)',
-                (AppCode, PublicKey, PrivateKey, Algorithm, CreatedBy)
+                (AppCode, SignatureKey, PrivateKey, Algorithm, CreatedBy)
             )
             db.commit()
             return redirect(url_for('index'))
